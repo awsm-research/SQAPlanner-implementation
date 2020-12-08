@@ -1,0 +1,69 @@
+---
+title: 'SQA Planner: Guidance for Rule discovery '
+author: "Dilini Rajapaksha"
+date: "7 December 2020"
+output:
+  # html_document: default
+  # pdf_document: default
+  md_document:
+    variant: markdown_github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Generating rule-based Explanations
+The execution steps of our framework is explained below.
+
+1. Build global models
+2. Generate the neighbourhood using instance_generation function in defect_class.py
+3. Generate the rules using Association Rule Mining. 
+   Here, the generated neighbourhood of a particular instance is considered as the input the association rule miner. 
+      * Option 1: The most closest open source package to Magnum Opus is, Opus Miner <https://cran.r-project.org/web/packages/opusminer/index.html>
+      * Option 2: Use BigML <https://bigml.com/dashboard/sources>
+      
+  **The steps of generating rules using BigML** 
+  
+  Step 1: Click on the dataset with the neighbourhood in the source file
+  ![](bigML/create_source_1.png)
+      
+  Step 2: Click on configure dataset
+    ![](bigML/configure_source_2.png)
+  
+  
+ Step 3: Click on configure dataset. After deselecting unwanted fields, click on “Create Dataset”
+  ![](bigML/configure_dataset_3.png)
+    
+  Step 4: Click on Association under un-supervised category to build the model. Set the search category (confidence, coverage, lift and leverage). Specify the consequent as the target column.  
+  ![](bigML/association_setup_model_7.png)
+  
+  
+  Step 5: Click on "Association" under unsupervised category to generate the model 
+    ![](bigML/association_4.png)
+  
+  
+  Step 6: Output rules and import those rules to csv.
+   ![](bigML/output_5.png)
+  
+4. Categorize generated rules to four different types; which provide four types of guidance 
+
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
