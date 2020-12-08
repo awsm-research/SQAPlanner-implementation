@@ -24,4 +24,4 @@ Step 5: Click on "Association" under unsupervised category to generate the model
 
 Step 6: Output rules and import those rules to csv. ![](bigML/output_5.png)
 
-1.  Categorize generated rules to four different types; which provide four types of guidance using excel\_defect.py
+4.  Categorize generated rules to four different types; which provide four types of guidance using `generate_excels()` function in excel\_defect.py file.

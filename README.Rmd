@@ -44,8 +44,8 @@ The execution steps of our framework is explained below.
   
   
   Step 6: Output rules and import those rules to csv.
-   ![](bigML/output_5.png)
-  
-4. Categorize generated rules to four different types; which provide four types of guidance using excel_defect.py 
+  ![](bigML/output_5.png)
+   
+4. Categorize generated rules to four different types; which provide four types of guidance using ``generate_excels()`` function in excel_defect.py file. 
 
 
